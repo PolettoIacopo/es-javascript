@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+</head>
+<body>
+
+  <h2>Login</h2>
+  <form id="loginForm" onsubmit="return validateForm(event)">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <br>
+
+    <button type="submit">Invia</button>
+    <button type="button" onclick="clearForm()">Cancella</button>
+  </form>
+
+  <script>
+    function validateForm(event) {
+      event.preventDefault(); // Impedisce l'invio predefinito del modulo
+
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // Verifica se la username è stata inserita
+      if (username.trim() === "") {
+        window.alert("Inserisci la username!");
+        return false;
+      }
+
+      // Verifica la lunghezza della password
+      if (password.length < 5 || password.length > 8) {
+        window.alert("La password deve essere lunga tra 5 e 8 caratteri.");
+        return false;
+      }
+
+      // Se tutto è valido, il form viene inviato
+      window.alert("Login avvenuto con successo!");
+      return true;
+    }
+
+    function clearForm() {
+      // Resetta il form cancellando i valori nei campi di input
+      document.getElementById('loginForm').reset();
+    }
+  </script>
+
+</body>
+</html>

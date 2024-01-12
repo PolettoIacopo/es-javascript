@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incrementa/Decrementa</title>
+</head>
+<body>
+
+  <input type="text" id="textBox" value="0">
+  <button onclick="increment()">Incrementa</button>
+  <button onclick="decrement()">Decrementa</button>
+
+  <script>
+    // Funzione per incrementare il valore nella casella di testo
+    function increment() {
+      var textBox = document.getElementById('textBox');
+      var currentValue = parseInt(textBox.value);
+      textBox.value = currentValue + 1;
+    }
+
+    // Funzione per decrementare il valore nella casella di testo
+    function decrement() {
+      var textBox = document.getElementById('textBox');
+      var currentValue = parseInt(textBox.value);
+      textBox.value = currentValue - 1;
+    }
+  </script>
+
+</body>
+</html>
